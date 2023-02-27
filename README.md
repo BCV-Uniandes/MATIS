@@ -1,6 +1,10 @@
 # MATIS
-Official implementation of Masked-Attention Transformers for Surgical Instrument Segmentation
-Ayobi, N. et. al.
+Official implementation of Masked-Attention Transformers for Surgical Instrument Segmentation.
+
+[Nicolás Ayobi](https://nayobi.github.io/), Alejandra Pérez Rondon, Santiago Rodríguez, Pablo Arbeláez
+Center for Research and Formation in Artificial Intelligence
+University of los Andes
+Bogotá, Colombia
 
 Coming soon !
 
