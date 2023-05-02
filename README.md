@@ -15,7 +15,7 @@ Center  for  Research  and  Formation  in  Artificial  Intelligence .([CINFONIA]
 ## MATIS
 
 <div align="center">
-  <img src="images/MATIS.png" width="70%" height="70%"/>
+  <img src="images/MATIS_architecture.png" width="70%" height="70%"/>
 </div><br/>
 
 ### Installation
