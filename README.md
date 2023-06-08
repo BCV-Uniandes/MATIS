@@ -11,6 +11,7 @@ This repository provides instructions to run the PyTorch implementation of MATIS
 Center  for  Research  and  Formation  in  Artificial  Intelligence .([CINFONIA](https://cinfonia.uniandes.edu.co/)),  Universidad  de  los  Andes,  Bogotá 111711, Colombia.<br/>
 
 **Preprint available at [ArXiv](https://arxiv.org/abs/2303.09514) "MATIS: Masked-Attention Transformers for Surgical Instrument Segmentation**<br/>
+Oral presentation at the International Symposium on Biomedical Imaging (ISBI) 2023
 
 ## MATIS
 
