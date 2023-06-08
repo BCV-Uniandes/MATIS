@@ -1,4 +1,5 @@
 # MATIS: Masked-Attention Transformers for Surgical Instrument Segmentation
+ISBI 2023 <br/>
 
 We propose Masked-Attention Transformers for Surgical Instrument Segmentation (MATIS), a two-stage, fully transformer-based method that leverages modern pixel-wise attention mechanisms for instrument segmentation. MATIS exploits the instance-level nature of the task by employing a masked attention module that generates and classifies a set of fine instrument region proposals. Our method incorporates long-term video-level information through video transformers to improve temporal consistency and enhance mask classification. We validate our approach in the two standard public benchmarks, Endovis 2017 and Endovis 2018. Our experiments demonstrate that MATIS' per-frame baseline outperforms previous state-of-the-art methods and that including our temporal consistency module boosts our model's performance further.
 
@@ -11,7 +12,7 @@ This repository provides instructions to run the PyTorch implementation of MATIS
 Center  for  Research  and  Formation  in  Artificial  Intelligence .([CINFONIA](https://cinfonia.uniandes.edu.co/)),  Universidad  de  los  Andes,  Bogotá 111711, Colombia.<br/>
 
 **Preprint available at [ArXiv](https://arxiv.org/abs/2303.09514) "MATIS: Masked-Attention Transformers for Surgical Instrument Segmentation**<br/>
-Oral presentation at the International Symposium on Biomedical Imaging (ISBI) 2023
+**Oral presentation at the International Symposium on Biomedical Imaging (ISBI) 2023**
 
 ## MATIS
 
