@@ -4,9 +4,9 @@
 <br/>
 Center  for  Research  and  Formation  in  Artificial  Intelligence .([CinfonIA](https://cinfonia.uniandes.edu.co/)),  Universidad  de  los  Andes,  Bogotá 111711, Colombia.<br/>
 
-**Oral presentation** at the **International Symposium on Biomedical Imaging (ISBI) 2023.** Paper available [here](https://ieeexplore.ieee.org/document/10230819).
-**Winning solution** of the [2022 SAR-RARP50 challenge](https://arxiv.org/abs/2401.00496)
-**Preprint** available at [arXiv](https://arxiv.org/abs/2303.09514)<br/>
+**Oral presentation** at the **International Symposium on Biomedical Imaging (ISBI) 2023.** Paper available [here](https://ieeexplore.ieee.org/document/10230819).<br/>
+**Winning solution** of the [2022 SAR-RARP50 challenge](https://arxiv.org/abs/2401.00496.)<br/>
+**Preprint** available at [arXiv](https://arxiv.org/abs/2303.09514).<br/>
 
 <div align="center">
   <img src="images/MATIS_architecture.png"/>
