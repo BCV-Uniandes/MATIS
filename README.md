@@ -47,7 +47,11 @@ Our code builds upon [Multi Scale Vision Transformers](https://github.com/facebo
 
 ### Preparing data
 
-1. Download the data and pretrained models from [MATIS](http://157.253.243.19/MATIS/).
+1. Download the data and pretrained models from [MATIS](http://157.253.243.19/MATIS/). We recommend downloading the files recursively with the following command:
+
+```sh
+$ wget -r http://157.253.243.19/MATIS
+```
 
 2. Locate the downloaded data into a directory named ```data``` inside this repository. In the end, the repo must have the following structure
 
