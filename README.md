@@ -186,15 +186,24 @@ $ sh run_files/ENDOVIS_2018/endovis_segmentation.sh
 
 ## Citing MATIS
 
-If you use MATIS in your research please include the following BibTex citation in your papers.
+If you use MATIS (or its extended benchmark version, TAPIS or GraSP) in your research please include the following BibTex citations in your papers.
 ```BibTeX
-@misc{ayobi2023matis,
-  author =       {Nicol{\'a}s Ayobi and Alejandra P{\'e}rez-Rond{\'o}n and Santiago Rodr{\'i}guez and Pablo Arbel{\'a}es},
-  title =        {MATIS: Masked-Attention Transformers for Surgical Instrument Segmentation},
-  howpublished = {\url{https://github.com/BCV-Uniandes/MATIS}},
-  journal=       {International Symposium on Biomedical Imaging (ISBI)},
-  year =         {2023}
+@misc{ayobi2024pixelwise,
+      title={Pixel-Wise Recognition for Holistic Surgical Scene Understanding}, 
+      author={Nicol{\'a}s Ayobi and Santiago Rodr{\'i}guez and Alejandra P{\'e}rez and Isabela Hern{\'a}ndez and Nicol{\'a}s Aparicio and Eug{\'e}nie Dessevres and Sebasti{\'a}n Peña and Jessica Santander and Juan Ignacio Caicedo and Nicol{\'a}s Fern{\'a}ndez and Pablo Arbel{\'a}ez},
+      year={2024},
+      eprint={2401.11174},
+      archivePrefix={arXiv},
+      primaryClass={cs.CV}
 }
+
+@InProceedings{ayobi2023matis,
+  author={Nicol{\'a}s Ayobi and Alejandra P{\'e}rez-Rond{\'o}n and Santiago Rodr{\'i}guez and Pablo Arbel{\'a}es},
+  booktitle={2023 IEEE 20th International Symposium on Biomedical Imaging (ISBI)}, 
+  title={MATIS: Masked-Attention Transformers for Surgical Instrument Segmentation}, 
+  year={2023},
+  pages={1-5},
+  doi={10.1109/ISBI53787.2023.10230819}}
 ```
 
 ## References
