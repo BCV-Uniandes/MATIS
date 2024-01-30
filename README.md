@@ -2,7 +2,7 @@
 
 [Nicolás Ayobi](https://nayobi.github.io/), Alejandra Pérez Rondon, Santiago Rodríguez, [Pablo Arbeláez](https://scholar.google.com.co/citations?user=k0nZO90AAAAJ&hl=en)<br/>
 <br/>
-Center  for  Research  and  Formation  in  Artificial  Intelligence .([CinfonIA](https://cinfonia.uniandes.edu.co/)),  Universidad  de  los  Andes,  Bogotá 111711, Colombia.<br/>
+<font size="1"> Center  for  Research  and  Formation  in  Artificial  Intelligence .([CinfonIA](https://cinfonia.uniandes.edu.co/)),  Universidad  de  los  Andes,  Bogotá 111711, Colombia. </font> <br/>
 
 **Oral presentation** at the **International Symposium on Biomedical Imaging (ISBI) 2023.** Paper available [here](https://ieeexplore.ieee.org/document/10230819).<br/>
 **Winning solution** of the [2022 SAR-RARP50 challenge](https://arxiv.org/abs/2401.00496.)<br/>
