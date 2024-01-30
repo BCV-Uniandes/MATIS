@@ -1,24 +1,26 @@
 # MATIS: Masked-Attention Transformers for Surgical Instrument Segmentation
-ISBI 2023 (Oral) <br/>
+
+[Nicolás Ayobi](https://nayobi.github.io/), Alejandra Pérez Rondon, Santiago Rodríguez, [Pablo Arbeláez](https://scholar.google.com.co/citations?user=k0nZO90AAAAJ&hl=en)<br/>
+<br/>
+Center  for  Research  and  Formation  in  Artificial  Intelligence .([CinfonIA](https://cinfonia.uniandes.edu.co/)),  Universidad  de  los  Andes,  Bogotá 111711, Colombia.<br/>
+
+**Oral presentation** at the **International Symposium on Biomedical Imaging (ISBI) 2023.** Paper available [here](https://ieeexplore.ieee.org/document/10230819).
+**Winning solution** of the [2022 SAR-RARP50 challenge](https://arxiv.org/abs/2401.00496)
+**Preprint** available at [arXiv](https://arxiv.org/abs/2303.09514)<br/>
+
+<div align="center">
+  <img src="images/MATIS_architecture.png"/>
+</div><br/>
 
 We propose Masked-Attention Transformers for Surgical Instrument Segmentation (MATIS), a two-stage, fully transformer-based method that leverages modern pixel-wise attention mechanisms for instrument segmentation. MATIS exploits the instance-level nature of the task by employing a masked attention module that generates and classifies a set of fine instrument region proposals. Our method incorporates long-term video-level information through video transformers to improve temporal consistency and enhance mask classification. We validate our approach in the two standard public benchmarks, Endovis 2017 and Endovis 2018. Our experiments demonstrate that MATIS' per-frame baseline outperforms previous state-of-the-art methods and that including our temporal consistency module boosts our model's performance further.
 
-This repository provides instructions to run the PyTorch implementation of MATIS, Oral presentation at [ISBI 2023](https://2023.biomedicalimaging.org/en/). 
+This repository provides instructions to run the PyTorch implementation of MATIS, Oral presentation at [ISBI 2023](https://ieeexplore.ieee.org/document/10230819). 
 
-## Paper
+## TAPIS and GraSP dataset
 
-[MATIS: Masked-Attention Transformers for Surgical Instrument Segmentation](https://arxiv.org/abs/2303.09514) <br/>
-[Nicolás Ayobi](https://nayobi.github.io/), Alejandra Pérez Rondon, Santiago Rodríguez, [Pablo Arbeláez](https://scholar.google.com.co/citations?user=k0nZO90AAAAJ&hl=en)<br/>
-Center  for  Research  and  Formation  in  Artificial  Intelligence .([CINFONIA](https://cinfonia.uniandes.edu.co/)),  Universidad  de  los  Andes,  Bogotá 111711, Colombia.<br/>
-
-**Preprint available at [ArXiv](https://arxiv.org/abs/2303.09514) "MATIS: Masked-Attention Transformers for Surgical Instrument Segmentation**<br/>
-**Oral presentation at the International Symposium on Biomedical Imaging (ISBI) 2023**
+Check out [**TAPIS**](https://github.com/BCV-Uniandes/GraSP/tree/main/TAPIS), an extended version of our MATIS method for multiple Surgical Workflow Analysis tasks. Also check our [**GraSP dataset**](https://github.com/BCV-Uniandes/GraSP), a **novel benchmark** for multi-level Surgical Workflow Analysis that provides **surgical instrument segmentation** annotations. TAPIS and GraSP have been published in this [arXiv](https://arxiv.org/abs/2401.11174).
 
 ## MATIS
-
-<div align="center">
-  <img src="images/MATIS_architecture.png" width="70%" height="70%"/>
-</div><br/>
 
 ### Installation
 Please follow these steps to run MATIS:
