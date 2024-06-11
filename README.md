@@ -2,11 +2,14 @@
 
 [Nicolás Ayobi](https://nayobi.github.io/), Alejandra Pérez Rondon, Santiago Rodríguez, [Pablo Arbeláez](https://scholar.google.com.co/citations?user=k0nZO90AAAAJ&hl=en)<br/>
 <br/>
-<font size="1"> Center  for  Research  and  Formation  in  Artificial  Intelligence .([CinfonIA](https://cinfonia.uniandes.edu.co/)),  Universidad  de  los  Andes,  Bogotá 111711, Colombia. </font> <br/>
+<font size="1"> Center  for  Research  and  Formation  in  Artificial  Intelligence .([CinfonIA](https://cinfonia.uniandes.edu.co/)),  Bogota, Colombia </font> <br/>
+Universidad  de  los  Andes,  Bogotá, Colombia. <br/>
 
-- **Oral presentation** at the **International Symposium on Biomedical Imaging (ISBI) 2023.** Proceedings available at [IEEE Xplore](https://ieeexplore.ieee.org/document/10230819).<br/>
+- **Oral presentation** at the **ISBI 2023.** Proceedings available at [IEEE Xplore](https://ieeexplore.ieee.org/document/10230819).<br/>
 - **Winning solution** of the [2022 SAR-RARP50 challenge](https://arxiv.org/abs/2401.00496.)<br/>
 - **Preprint** available at [arXiv](https://arxiv.org/abs/2303.09514).<br/>
+
+## Abstract
 
 <div align="center">
   <img src="images/MATIS_architecture.png"/>
@@ -47,10 +50,11 @@ Our code builds upon [Multi Scale Vision Transformers](https://github.com/facebo
 
 ### Preparing data
 
-1. Download the data and pretrained models from [MATIS](http://157.253.243.19/MATIS/). We recommend downloading the files recursively with the following command:
+1. Download and extract the data and pretrained models from [MATIS](http://157.253.243.19/MATIS/MATIS.tar.gz). We recommend downloading and extracting the files with the following command:
 
 ```sh
-$ wget -r http://157.253.243.19/MATIS
+$ wget -r http://157.253.243.19/MATIS/MATIS.tar.gz
+$ tar -xzvf MATIS.tar.gz
 ```
 
 2. Locate the downloaded data into a directory named ```data``` inside this repository. In the end, the repo must have the following structure
@@ -87,12 +91,17 @@ $ wget -r http://157.253.243.19/MATIS
       |_tools
            ...
   ```
+
+### Alternative Download Methods
+
+If you cannot download the data fromour servers, you can also download the compressed archive from this [Google Drive Link]().
+
 ### Evaluating MATIS
 
-| Dataset | mIoU | IoU | mcIoU | config | run file | model |
+| Dataset | mIoU | IoU | mcIoU | config | run file | model path |
 | ----- | ----- | ----- | ----- | ----- | ----- | ----- |
-| Endovis 2017 | 71.36 $\pm$ 3.46 | 66.28 | 41.09 | [EV2017_config](configs/endovis_2017/MATIS_FULL.yaml) | [EV2017_run](run_files/ENDOVIS_2017/endovis_segmentation.sh) | [EV2017_model](http://157.253.243.19/MATIS/endovis_2017/models) |
-| Endovis 2018 | 84.26 | 79.12 | 54.04 | [EV2018_config](configs/endovis_2018/MATIS_FULL.yaml) | [EV2018_run](run_files/ENDOVIS_2018/endovis_segmentation.sh) | [EV2018_model](http://157.253.243.19/MATIS/endovis_2018/models) |
+| Endovis 2017 | 71.36 $\pm$ 3.46 | 66.28 | 41.09 | [EV2017_config](configs/endovis_2017/MATIS_FULL.yaml) | [EV2017_run](run_files/ENDOVIS_2017/endovis_segmentation.sh) | *MATIS/endovis_2017/models* |
+| Endovis 2018 | 84.26 | 79.12 | 54.04 | [EV2018_config](configs/endovis_2018/MATIS_FULL.yaml) | [EV2018_run](run_files/ENDOVIS_2018/endovis_segmentation.sh) | *MATIS/endovis_2018/models* |
 
 1. First add this repository to $PYTHONPATH with the following command:
 
@@ -100,7 +109,7 @@ $ wget -r http://157.253.243.19/MATIS
 $ export PYTHONPATH=/path/to/MATIS/matis:$PYTHONPATH
 ```
 
-2. Make sure that you downloaded the data and pretrained weights from [MATIS](http://157.253.243.19/MATIS/) and that you located directories and files into the ```data``` direcrtory.
+2. Make sure that you downloaded the data and pretrained weights from [MATIS](http://157.253.243.19/MATIS/MATIS.tar.gz) and that you located directories and files into the ```data``` direcrtory.
 
 3. Use the following commands to run evaluation on endovis 2017 or 2018.
 
@@ -114,11 +123,15 @@ $ sh run_files/ENDOVIS_2018/endovis_segmentation.sh
 
 These are bash files with the commands to run evaluation. If you go into the files you'll find that there are a bunch of configuration flags with the data paths and the hyperparameters. You can modify this hyperparameters for experimentation. For the Endovis 2017 dataset there is a variable named ```FOLD``` which corresponds to fold id between 0,1,2 or 3 to evaluate. The variable has been set to 3 but you can change it to other fold value. 
 
+### Segmentation Baseline
+
+We provide instructions on how to run our instrument segmentation baseline in our extended version called [TAPIS](https://github.com/BCV-Uniandes/GraSP/tree/main/TAPIS). Please check this [repo](https://github.com/BCV-Uniandes/GraSP/tree/main/TAPIS) in the Region Proposal Baseline section to run our baseline.
+
 #### Additional Info
 
 1. We provide the precomputed mask features from [Mask2Former](https://github.com/facebookresearch/Mask2Former)[1]. However, we also provide our pretrained Mask2Former weights in the ```models``` directory inside each dataset's directory. Feel free to use these weights to compute our region features with [Mask2Former's](https://github.com/facebookresearch/Mask2Former)[1] code, and use our estimated per-class thresholds and top-k values in the ```mask2former_inference_threshold_ks.json``` file to filter regions.
 
-2. Our pre-computed mask features (after the per-class filtering inference method) can be found in our data [link](http://157.253.243.19/MATIS/) in the ````features``` directory inside each dataset's folder. The directory contains a .pth file with the following structure:
+2. Our pre-computed mask features (after the per-class filtering inference method) can be found in our data [link](http://157.253.243.19/MATIS/MATIS.tar.gz) in the ````features``` directory inside each dataset's folder. The directory contains a .pth file with the following structure:
 
 ```tree
 {"features":
@@ -148,7 +161,7 @@ These are bash files with the commands to run evaluation. If you go into the fil
 ```
 MATIS' dataloader identifies each mask feature by its bounding box for simplicity. The RLE masks can be decoded and visualized using the ```decode``` function of the ```pycocotools.masks``` library.
 
-3. In the ```models``` directory inside each dataset's folder in our data [link](http://157.253.243.19/MATIS/) there is a file named ```mask2former_inference_threshold_ks.json``` which contains the values of the calculated per-class thresholds and top-k selection values for the region filtering method in Mask2Former's inference. This file has the following structure:
+3. In the ```models``` directory inside each dataset's folder in our data [link](http://157.253.243.19/MATIS/MATIS.tar.gz) there is a file named ```mask2former_inference_threshold_ks.json``` which contains the values of the calculated per-class thresholds and top-k selection values for the region filtering method in Mask2Former's inference. This file has the following structure:
 
 ```tree
 {
