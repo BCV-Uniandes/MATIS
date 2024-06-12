@@ -57,7 +57,7 @@ $ wget -r http://157.253.243.19/MATIS/MATIS.tar.gz
 $ tar -xzvf MATIS.tar.gz
 ```
 
-2. Locate the downloaded data into a directory named ```data``` inside this repository. In the end, the repo must have the following structure
+2. Locate the downloaded data into this repository's directory named ```data```. In the end, the repo must have the following structure
 
   ```tree
   MATIS
@@ -94,7 +94,7 @@ $ tar -xzvf MATIS.tar.gz
 
 ### Alternative Download Methods
 
-If you cannot download the data fromour servers, you can also download the compressed archive from this [Google Drive Link]().
+If you cannot download the data from our servers, you can also download the compressed archive from this [Google Drive Link](https://drive.google.com/file/d/1sbOazLT49raQhteieVsJLo5PcKO9LEKG/view?usp=sharing).
 
 ### Evaluating MATIS
 
@@ -103,25 +103,25 @@ If you cannot download the data fromour servers, you can also download the compr
 | Endovis 2017 | 71.36 $\pm$ 3.46 | 66.28 | 41.09 | [EV2017_config](configs/endovis_2017/MATIS_FULL.yaml) | [EV2017_run](run_files/ENDOVIS_2017/endovis_segmentation.sh) | *MATIS/endovis_2017/models* |
 | Endovis 2018 | 84.26 | 79.12 | 54.04 | [EV2018_config](configs/endovis_2018/MATIS_FULL.yaml) | [EV2018_run](run_files/ENDOVIS_2018/endovis_segmentation.sh) | *MATIS/endovis_2018/models* |
 
-1. First add this repository to $PYTHONPATH with the following command:
+1. First, add this repository to $PYTHONPATH with the following command:
 
 ```sh
 $ export PYTHONPATH=/path/to/MATIS/matis:$PYTHONPATH
 ```
 
-2. Make sure that you downloaded the data and pretrained weights from [MATIS](http://157.253.243.19/MATIS/MATIS.tar.gz) and that you located directories and files into the ```data``` direcrtory.
+2. Make sure that you downloaded the data and pretrained weights from [MATIS](http://157.253.243.19/MATIS/MATIS.tar.gz) and that you located directories and files into the ```data``` directory.
 
-3. Use the following commands to run evaluation on endovis 2017 or 2018.
+3. Use the following commands to evaluate Endovis 2017 or 2018.
 
 ```sh
-# Evaluating on a single fold of Endovis 2017. Change the FOLD variable to modify the evluating fold.
+# Evaluating on a single fold of Endovis 2017. Change the FOLD variable to modify the evaluating fold.
 $ sh run_files/ENDOVIS_2017/endovis_segmentation.sh
 
 # Evaluating on Endovis 2018.
 $ sh run_files/ENDOVIS_2018/endovis_segmentation.sh
 ```
 
-These are bash files with the commands to run evaluation. If you go into the files you'll find that there are a bunch of configuration flags with the data paths and the hyperparameters. You can modify this hyperparameters for experimentation. For the Endovis 2017 dataset there is a variable named ```FOLD``` which corresponds to fold id between 0,1,2 or 3 to evaluate. The variable has been set to 3 but you can change it to other fold value. 
+These are bash files with the commands to run evaluation. If you go into the files, you'll find a bunch of configuration flags with the data paths and the hyperparameters. You can modify this hyperparameter for experimentation. For the Endovis 2017 dataset, a variable named ```FOLD```corresponds to fold id between 0,1,2 and 3 to evaluate. The variable has been set to 3, but you can change it to another fold value. 
 
 ### Segmentation Baseline
 
@@ -129,7 +129,7 @@ We provide instructions on how to run our instrument segmentation baseline in ou
 
 #### Additional Info
 
-1. We provide the precomputed mask features from [Mask2Former](https://github.com/facebookresearch/Mask2Former)[1]. However, we also provide our pretrained Mask2Former weights in the ```models``` directory inside each dataset's directory. Feel free to use these weights to compute our region features with [Mask2Former's](https://github.com/facebookresearch/Mask2Former)[1] code, and use our estimated per-class thresholds and top-k values in the ```mask2former_inference_threshold_ks.json``` file to filter regions.
+1. We provide the precomputed mask features from [Mask2Former](https://github.com/facebookresearch/Mask2Former)[1]. However, we also offer our pretrained Mask2Former weights in the ```models``` directory inside each dataset's directory. Feel free to use these weights to compute our region features with [Mask2Former's](https://github.com/facebookresearch/Mask2Former)[1] code and use our estimated per-class thresholds and top-k values in the ```mask2former_inference_threshold_ks.json``` file to filter regions.
 
 2. Our pre-computed mask features (after the per-class filtering inference method) can be found in our data [link](http://157.253.243.19/MATIS/MATIS.tar.gz) in the ````features``` directory inside each dataset's folder. The directory contains a .pth file with the following structure:
 
@@ -159,7 +159,7 @@ We provide instructions on how to run our instrument segmentation baseline in ou
     ]
 }
 ```
-MATIS' dataloader identifies each mask feature by its bounding box for simplicity. The RLE masks can be decoded and visualized using the ```decode``` function of the ```pycocotools.masks``` library.
+For simplicity, MATIS' dataloader identifies each mask feature by its bounding box. The RLE masks can be decoded and visualized using the ```decode``` function of the ```pycocotools.masks``` library.
 
 3. In the ```models``` directory inside each dataset's folder in our data [link](http://157.253.243.19/MATIS/MATIS.tar.gz) there is a file named ```mask2former_inference_threshold_ks.json``` which contains the values of the calculated per-class thresholds and top-k selection values for the region filtering method in Mask2Former's inference. This file has the following structure:
 
@@ -183,11 +183,11 @@ MATIS' dataloader identifies each mask feature by its bounding box for simplicit
 
 1. Please use [Mask2Former's](https://github.com/facebookresearch/Mask2Former)[1] code to train our baseline and compute region proposals.
 
-2. Our bash files are set to perform evaluation by default. To train, go to the bash files in [run_files/ENDOVIS_201*/endovis_segmentation.sh](run_files) and change ```TRAIN.ENABLE False``` into ```TRAIN.ENABLE True```. You can also set ````TEST.ENABLE False``` to avoid evaluating first.
+2. Our bash files are set to evaluate by default. To train, go to the bash files in [run_files/ENDOVIS_201*/endovis_segmentation.sh](run_files) and change ```TRAIN.ENABLE False``` into ```TRAIN.ENABLE True```. You can also set ````TEST.ENABLE False``` to avoid evaluating first.
 
-3. Our bash files are set to load the pretrained weights from MATIS by default. If you want to train from MViT's pretrained weights you should download the [MViTv1_B_16x4](https://drive.google.com/file/d/194gJinVejq6A1FmySNKQ8vAN5-FOY-QL/view?usp=sharing) model from the [SlowFast](https://github.com/facebookresearch/SlowFast)[2] repo and change the ```CHECKPOINT``` variable in our bash file to the path of those weights. You can also remove the ```TRAIN.CHECKPOINT``` flag to train from scratch.
+3. Our bash files are set to load the pretrained weights from MATIS by default. If you want to train from MViT's pretrained weights, you should download the [MViTv1_B_16x4](https://drive.google.com/file/d/194gJinVejq6A1FmySNKQ8vAN5-FOY-QL/view?usp=sharing) model from the [SlowFast](https://github.com/facebookresearch/SlowFast)[2] repo and change the ```CHECKPOINT``` variable in our bash file to the path of those weights. You can also remove the ```TRAIN.CHECKPOINT``` flag to train from scratch.
 
-4. After modifing the bash files you can now run the following commands to train MATIS:
+4. After modifying the bash files, you can now run the following commands to train MATIS:
 
 ```sh
 # Training on a single fold of Endovis 2017. Change the FOLD variable to modify the training fold.
@@ -199,7 +199,7 @@ $ sh run_files/ENDOVIS_2018/endovis_segmentation.sh
 
 ## Citing MATIS
 
-If you use MATIS (or its extended benchmark version, TAPIS or GraSP) in your research please include the following BibTex citations in your papers.
+If you use MATIS (or its extended benchmark version, TAPIS, or GraSP) in your research, please include the following BibTex citations in your papers.
 ```BibTeX
 @misc{ayobi2024pixelwise,
       title={Pixel-Wise Recognition for Holistic Surgical Scene Understanding}, 
