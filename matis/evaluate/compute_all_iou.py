@@ -163,8 +163,8 @@ def eval_segmentation(preds,features,data,version):
         total_gt_iou = float(np.mean(gt_ious))
 
         for cls in pcls_ious:
-            pcls_ious[cls] = float(np.mean(pcls_ious[cls])) if len(pcls_ious[cls])>0 else 0
-        total_ciou = float(np.mean(list(pcls_ious.values())))
+            pcls_ious[cls] = float(np.mean(pcls_ious[cls])) if len(pcls_ious[cls])>0 else np.nan
+        total_ciou = float(np.nanmean(list(pcls_ious.values())))
     except:
         traceback.print_exc()
         breakpoint()
